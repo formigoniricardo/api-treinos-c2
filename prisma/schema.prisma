@@ -1,0 +1,37 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+
+model User {
+  id       String    @id @default(uuid())
+  name     String
+  email    String    @unique
+  password String
+  role     String    @default("USER") // Pode ser "USER" ou "ADMIN"
+  workouts Workout[]
+}
+
+model Workout {
+  id          String     @id @default(uuid())
+  title       String     // Ex: "Treino A - Powerlifting"
+  description String?
+  userId      String
+  user        User       @relation(fields: [userId], references: [id])
+  exercises   Exercise[]
+}
+
+model Exercise {
+  id        String  @id @default(uuid())
+  name      String  // Ex: "Supino Reto"
+  sets      Int
+  reps      String
+  workoutId String
+  workout   Workout @relation(fields: [workoutId], references: [id], onDelete: Cascade)
+}
