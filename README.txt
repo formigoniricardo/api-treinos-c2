@@ -24,6 +24,8 @@ A stack foi construída para garantir tipagem estática, segurança e testes rig
 * **Validação:** Zod (Validação de schemas de entrada)
 * **Segurança:** JWT (JSON Web Token) + bcrypt (Hash de senhas)
 * **Qualidade & Testes:** Vitest + Supertest (Testes unitários e de integração com cobertura >70%)
+* **Print do test coverage:
+![Print da Cobertura de Testes](./docs/testcoverage.png)
 
 ---
 
