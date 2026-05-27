@@ -71,7 +71,7 @@ npm run test:coverage
 
 - Exemplos de Requisições (Payloads)
 Abaixo estão exemplos rápidos para testar as rotas no Insomnia ou Postman.
-URL:http://localhost:3000
+URL:http://localhost:3000 - para ver os tokens: npx prisma studio
 1. Criar um novo Atleta (POST /auth/register)
 JSON
 {
